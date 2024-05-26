@@ -1,6 +1,6 @@
 # dwl
 
-dwl is a Python script designed to download photos from vk.com social network either from community walls or from saved photos of a user.
+Python script designed to download photos from vk.com social network either from community walls or from saved photos of a user.
 
 ## Installation
 
