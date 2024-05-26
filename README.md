@@ -1,35 +1,77 @@
 # dwl
 
-Python script designed to download photos from vk.com social network either from community walls or from saved photos of a user.
+dwl is a Python script designed to download photos from vk.com social network either from community walls or from saved photos of a user.
 
 ## Installation
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/methhae/dwl.git
-    ```
+
+   ```bash
+   git clone https://github.com/methhae/dwl.git
+   ```
 
 2. Navigate to the project directory:
-    ```bash
-    cd dwl
-    ```
+
+   ```bash
+   cd dwl
+   ```
 
 3. Create and activate a virtual environment:
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
 4. Install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Getting VK Access Token
+
+To use the `dwl` script, you need to obtain an access token from VK (VKontakte). Follow these steps to create a VK application and obtain the access token:
+
+1. **Create VK Application:**
+
+   - Go to the [VK Developers](https://vk.com/dev) website and log in with your VK account credentials.
+   - Navigate to the [My Apps](https://vk.com/apps?act=manage) section.
+   - Click on the "Create App" button.
+
+2. **Fill in Application Details:**
+
+   - Provide the necessary details for your application, including the name, description, and platform. Choose "Standalone Application" as the platform.
+   - Complete the captcha and click the "Connect Application" button.
+
+3. **Obtain Access Token:**
+
+   - Once your application is created, go to the "Settings" tab.
+   - Scroll down to the "Access Tokens" section.
+   - Click on the "Create Token" button.
+   - Grant the necessary permissions for your application (e.g., photos access).
+   - After granting permissions, the access token will be generated. Copy the access token.
+
+4. **Set Up `.env` File:**
+
+   - In the project directory, create a file named `.env` if it doesn't already exist.
+   - Open the `.env` file in a text editor.
+   - Add the following line, replacing `your_token` with the access token you obtained:
+     ```
+     VK_ACCESS_TOKEN=your_token
+     ```
+
+5. **Save and Run:**
+   - Save the `.env` file.
+   - Now you can run the `dwl` script using the instructions provided in the README.md file.
+
+By following these steps, you'll have successfully obtained the VK access token required for using the `dwl` script.
 
 ## Usage
 
 Ensure you have created a `.env` file in the project directory with your VK access token in the format `VK_ACCESS_TOKEN=your_token`.
 
 Run the script with the following command:
+
 ### Options:
 
 - `--community`: This option indicates that you want to run the script in community mode. In community mode, the script will download photos from a VK community (group) based on the specified group name.
@@ -41,17 +83,15 @@ Run the script with the following command:
 ### Examples:
 
 1. **Download photos from a community:**
-    ```bash
-    python dwl.py --community --group_name my_community
-    ```
+
+   ```bash
+   python dwl.py --community --group_name my_community
+   ```
+
    This command will run the script in community mode and download photos from the VK community named `my_community`.
 
 2. **Download saved photos from your VK account:**
-    ```bash
-    python dwl.py --saved
-    ```
+   ```bash
+   python dwl.py --saved
+   ```
    This command will run the script in saved mode and download photos from the saved photos album of your VK account.
-
-### Note:
-- Before running the script, ensure you have created a `.env` file in the project directory with your VK access token. The access token should be in the format `VK_ACCESS_TOKEN=your_token`.
-
