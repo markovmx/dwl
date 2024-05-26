@@ -38,18 +38,20 @@ To use the `dwl` script, you need to obtain an access token from VK (VKontakte).
    - Navigate to the [My Apps](https://vk.com/apps?act=manage) section.
    - Click on the "Create App" button.
 
-2. **Fill in Application Details:**
+2. **Fill in Application Details and Authorize:**
 
-   - Provide the necessary details for your application, including the name, description, and platform. Choose "Standalone Application" as the platform.
-   - Complete the captcha and click the "Connect Application" button.
+   - Find aplication id.
+   - Create request in your web-browser with next url-string
+     https://oauth.vk.com/authorize
+     ?client_id=YOUR_APP_ID
+     &redirect_uri=YOUR_REDIRECT_URI
+     &scope=PERMISSIONS_SCOPE
+     &response_type=code
 
 3. **Obtain Access Token:**
 
-   - Once your application is created, go to the "Settings" tab.
-   - Scroll down to the "Access Tokens" section.
-   - Click on the "Create Token" button.
-   - Grant the necessary permissions for your application (e.g., photos access).
-   - After granting permissions, the access token will be generated. Copy the access token.
+   - After request you will redirect to similar path, here you find your access token:
+     https://oauth.vk.com/blank.html#access_token=YOUR_ACCESS_TOKEN_WILL_BE_HERE&expires_in=86400&user_id=816994330
 
 4. **Set Up `.env` File:**
 
