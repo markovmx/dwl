@@ -41,12 +41,7 @@ To use the `dwl` script, you need to obtain an access token from VK (VKontakte).
 2. **Fill in Application Details and Authorize:**
 
    - Find aplication id.
-   - Create request in your web-browser with next url-string
-     https://oauth.vk.com/authorize
-     ?client_id=YOUR_APP_ID
-     &redirect_uri=YOUR_REDIRECT_URI
-     &scope=PERMISSIONS_SCOPE
-     &response_type=code
+   - Visit: https://vkhost.github.io and grant access to your profile (correct type of access, in "Настройки" select "Группы", "Фотографии", "Видео", "Аудиозаписи")
 
 3. **Obtain Access Token:**
 
